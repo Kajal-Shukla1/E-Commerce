@@ -1,7 +1,7 @@
 import express from 'express';
 
-import { createCoupon, validateCoupon,deleteCoupon, getAllCoupons } from '../controllers/coupon.controller.js';
-import { protectRoute } from '../middlewares/auth.middleware.js';
+import { validateCoupon, getAllCoupons } from '../controllers/coupon.controller.js';
+import { protectRoute } from '../middleware/auth.middleware.js';
 
 const router = express.Router();
 
