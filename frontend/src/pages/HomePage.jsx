@@ -14,7 +14,7 @@ const categories = [
 const HomePage = () => {
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
-      <div className="relative z-10 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 display-inherit">
+      <div className="relative z-10 flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" style={{ display: "inherit" }}>
         <h1 className="text-5xl font-bold text-center sm:text-6xl text-emerald-400 mb-4">
           Explore Our Collections
         </h1>

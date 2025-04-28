@@ -31,7 +31,7 @@ export const useUserStore = create((set, get) => ({
             set({user: res.data,loading:false});
         } catch (error) {
             set({loading:false});
-            toast.error(error.response?.data?.message || "An error occured, please try again");
+            toast.error(error.response?.data?.message || "An error occured during login, please try again");
         }
     },
 
@@ -52,7 +52,7 @@ export const useUserStore = create((set, get) => ({
             set({user: res.data,checkingAuth:false});
         } catch (error) {
             set({checkingAuth:false});
-            toast.error(error.response?.data?.message || "An error occured, please try again");
+            toast.error(error.response?.data?.message || "An error occured during checkAuth, please try again");
         }
     },
 }));

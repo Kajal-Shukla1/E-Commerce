@@ -30,7 +30,7 @@ const Navbar = () => {
             </Link>
         )}
         {isAdmin && (
-            <Link to={"/admin"} className="bg-emerald-700 hover:text-emerald-600 text-white px-3 py-1 rounded-md font-medium transition duration-300 ease-in-out flex items-center-center"> 
+            <Link to={"/secret-dashboard"} className="bg-emerald-700 hover:text-emerald-600 text-white px-3 py-1 rounded-md font-medium transition duration-300 ease-in-out flex items-center-center"> 
               <Lock className="inline-block mr-1" size={18} />
               <span className="hidden sm:inline">Dashboard</span>
             </Link>
