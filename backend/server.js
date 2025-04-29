@@ -15,7 +15,7 @@ dotenv.config();
 const PORT = process.env.PORT ;
 const app = express();
 
-app.use(express.json()); // Parse JSON bodies (as sent by API clients)
+app.use(express.json({limit: "10mb"})); // Parse JSON bodies (as sent by API clients)
 app.use(cookieParser()); // Parse cookies from the request headers
 
 
