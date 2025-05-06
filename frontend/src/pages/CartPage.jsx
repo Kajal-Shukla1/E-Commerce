@@ -2,7 +2,11 @@ import {useCartStore} from "..stores/useCartStore"
 const CartPage = () => {
   const {cart} = useCartStore();
   return (
-    <div>CartPage</div>
+    <div className="">
+      <div>
+
+      </div>
+    </div>
   )
 }
 
