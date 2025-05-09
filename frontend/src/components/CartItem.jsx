@@ -1,7 +1,7 @@
 import {Minus , Plus, Trash} from 'lucide-react';
 import {useCartStore} from '../stores/useCartStore';
 
-const CartItem = () => {
+const CartItem = ({item}) => {
   const { removeFromCart , updateQuantity} = useCartStore();
   return (
     <div className='rounded-lg border p-4 shadow-sm border-gray-700 bg-gray-800 md:p-6'>
@@ -27,6 +27,10 @@ const CartItem = () => {
             >
               <Plus className='text-gray-300' onClick={() => updateQuantity(item._id,item.quantity+1)}/>
             </button>
+          </div>
+
+          <div className='text-end md:order-4 md:w-32'>
+            <p className='text-base font-bold text-emerald-400'>${item.price}</p>
           </div>
         </div>
       </div>
