@@ -1,7 +1,7 @@
 import { useCartStore } from "../stores/useCartStore";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import CartItem from "../components/CartItem";
 import PeopleAlsoBought from "../components/PeopleAlsoBought"; 
 
