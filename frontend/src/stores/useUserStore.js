@@ -52,7 +52,7 @@ export const useUserStore = create((set, get) => ({
             set({user: res.data,checkingAuth:false});
         } catch (error) {
             set({checkingAuth:false});
-            toast.error(error.response?.data?.message || "An error occured during checkAuth, please try again");
+           console.log(error)
         }
     },
 }));

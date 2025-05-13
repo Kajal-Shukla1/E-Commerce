@@ -22,8 +22,9 @@ function App() {
  },[checkAuth]);
 
  useEffect(() => {
+  if(!user) return;
   getCartItems();
- },[getCartItems])
+ },[getCartItems,user])
 
  if(checkingAuth) return <LoadingSpinner/>;
   return (
