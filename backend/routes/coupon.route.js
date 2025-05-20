@@ -5,7 +5,7 @@ import { protectRoute } from '../middleware/auth.middleware.js';
 
 const router = express.Router();
 
-router.get('/validate', protectRoute, validateCoupon);
+router.post('/validate', protectRoute, validateCoupon);
 router.get('/',protectRoute, getAllCoupons);  
 
 

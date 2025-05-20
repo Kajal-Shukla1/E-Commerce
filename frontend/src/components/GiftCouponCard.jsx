@@ -1,18 +1,37 @@
 import { motion } from "framer-motion"
 import { Scale } from "lucide-react";
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { useCartStore } from "../stores/useCartStore";
+import toast from "react-hot-toast";
 
 const GiftCouponCard = () => {
-    const[userInputCode,setUserInputCode] = useState('');
-    const { coupon , isCouponApplied} = useCartStore();
+    const[userInputCode,setUserInputCode] = useState("");
+    const { coupon , isCouponApplied , applyCoupon ,removeCoupon,getMyCoupon} = useCartStore();
+    
+    useEffect(() => {
+        getMyCoupon();
+    },[getMyCoupon]);
 
+    useEffect(() => {
+        if (coupon) {
+            setUserInputCode(coupon.code);
+        }
+    }, [coupon]);
+    
     const handleApplyCoupon= () =>{
-        console.log(userInputCode);
+        if(userInputCode.trim() === ""){
+            console.log("Please enter a coupon code");
+            toast.error("Please enter a coupon code");
+            return;
+        }
+        else{
+            applyCoupon(userInputCode);
+        }
     }
 
-    const handleRemoveCoupon =() =>{
-        console.log("coupon removed");
+    const handleRemoveCoupon = async () =>{
+        await removeCoupon();
+        setUserInputCode("");
     }
 
   return (
@@ -35,7 +54,7 @@ const GiftCouponCard = () => {
             <motion.div
               type='button'
               className='flex w-full items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-sm
-              font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300'
+              font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300 cursor-pointer'
               whileHover={{scale:1.05}}
               whileTap={{scale : 0.95}}
               onClick={handleApplyCoupon}
