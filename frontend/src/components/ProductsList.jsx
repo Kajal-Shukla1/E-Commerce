@@ -1,7 +1,6 @@
 import {motion} from 'framer-motion';
 import { Trash, Star } from 'lucide-react'; 
 import { useProductStore } from '../stores/useProductStore';
-import { useEffect } from 'react';
 
 const ProductsList = () => {
   const { products, deleteProduct, toggleFeaturedProduct } = useProductStore();
@@ -13,7 +12,7 @@ const ProductsList = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       >
-      
+
       <table className="min-w-full divide-y divide-gray-700">
         <thead className='bg-gray-700'>
           <tr>
